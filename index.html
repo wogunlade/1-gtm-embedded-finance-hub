@@ -1,74 +1,578 @@
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Embedded Finance GTM Hub | Interactive Case Study</title>
- <style>
- body { font-family: 'Segoe UI', sans-serif; max-width: 960px;
- margin: 0 auto; background: #0a0a0a; color: #e5e5e5; padding: 40px 20px; }
- h1 { color: #00d4aa; font-size: 2.2em; }
- h2 { color: #7dd3fc; margin-top: 40px; }
- p { color: #94a3b8; line-height: 1.7; }
- .chart-container { margin: 40px 0; border-radius: 12px; overflow: hidden; }
- .section-label { font-size: 0.85em; color: #00d4aa;
- text-transform: uppercase; letter-spacing: 2px; }
- </style>
+  <!-- ============================================
+       BASIC PAGE SETTINGS
+       Do not change anything in this section
+  ============================================ -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============================================
+       PAGE TITLE — Change this to your title
+       This appears on the browser tab
+  ============================================ -->
+  <title>
+    Coopify & ProbityCoop: Africa's Cooperative Financial OS
+  </title>
+
+  <!-- ============================================
+       STYLES — Controls how your page looks
+       You can change colors here later
+  ============================================ -->
+  <style>
+
+    /* PAGE BACKGROUND AND TEXT */
+    body {
+      background-color: #0f172a;
+      color: #e2e8f0;
+      font-family: Georgia, serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.8;
+    }
+
+    /* THE MAIN CONTENT CONTAINER */
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+
+    /* ---- HERO SECTION (TOP OF PAGE) ---- */
+    .hero {
+      text-align: center;
+      padding: 80px 20px 60px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .hero-label {
+      color: #00d4aa;
+      font-size: 13px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .hero h1 span {
+      color: #00d4aa;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: #94a3b8;
+      max-width: 600px;
+      margin: 0 auto 30px;
+    }
+
+    .hero-meta {
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    /* ---- SECTION LABELS ---- */
+    .section-label {
+      color: #00d4aa;
+      font-size: 11px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    /* ---- SECTION HEADINGS ---- */
+    h2 {
+      font-size: 28px;
+      color: #ffffff;
+      margin-top: 60px;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 20px;
+      color: #00d4aa;
+      margin-top: 30px;
+    }
+
+    /* ---- BODY TEXT ---- */
+    p {
+      color: #cbd5e1;
+      margin-bottom: 20px;
+    }
+
+    /* ---- CHART AND COMPONENT BOXES ---- */
+    .embed-block {
+      background: #1e293b;
+      border-radius: 12px;
+      padding: 10px;
+      margin: 40px 0;
+      border: 1px solid #334155;
+    }
+
+    .embed-label {
+      font-size: 12px;
+      color: #64748b;
+      text-align: center;
+      margin-top: 8px;
+      font-style: italic;
+    }
+
+    /* ---- IFRAME (for charts and components) ---- */
+    iframe {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      display: block;
+    }
+
+    /* ---- HIGHLIGHT BOX ---- */
+    .callout {
+      background: #0d3b2e;
+      border-left: 4px solid #00d4aa;
+      border-radius: 8px;
+      padding: 20px 24px;
+      margin: 30px 0;
+      color: #a7f3d0;
+      font-size: 15px;
+    }
+
+    /* ---- STAT BOXES ---- */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 30px 0;
+    }
+
+    .stat-box {
+      background: #1e293b;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      border: 1px solid #334155;
+    }
+
+    .stat-number {
+      font-size: 28px;
+      font-weight: 800;
+      color: #00d4aa;
+    }
+
+    .stat-label {
+      font-size: 12px;
+      color: #64748b;
+      margin-top: 6px;
+    }
+
+    /* ---- DIVIDER LINE ---- */
+    .divider {
+      border: none;
+      border-top: 1px solid #1e293b;
+      margin: 50px 0;
+    }
+
+    /* ---- FOOTER ---- */
+    .footer {
+      text-align: center;
+      padding: 40px 20px;
+      border-top: 1px solid #1e293b;
+      color: #475569;
+      font-size: 13px;
+    }
+
+    .footer a {
+      color: #00d4aa;
+      text-decoration: none;
+    }
+
+    /* ---- RESPONSIVE (looks good on phones) ---- */
+    @media (max-width: 600px) {
+      .hero h1 { font-size: 28px; }
+      .stats-grid { grid-template-columns: 1fr; }
+    }
+
+  </style>
 </head>
+
 <body>
- <p class="section-label">Interactive Growth Case Study</p>
- <h1>SaaS to Financial Operating System: The GTM Playbook</h1>
- <p>How B2B SaaS platforms are engineering 3–5x revenue growth
- by embedding financial services into their core product.</p>
 
- <h2>📊 ARR Trajectory: What Embedded Finance Actually Does to Revenue</h2>
- <p>Three-year projection model for a $2M ARR baseline SaaS platform
- transitioning to an embedded finance architecture.</p>
- <div class="chart-container">
- <!-- <div class="flourish-embed flourish-chart" data-src="visualisation/28096756"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/28096756/thumbnail" width="100%" alt="visualization" /></noscript></div> -->
- </div>
+  <!-- ============================================================
+       SECTION 1: HERO HEADER
+       This is the very top of your page
+       EDIT: Change the title, subtitle, and your name
+  ============================================================ -->
+  <div class="hero">
 
- <h2>💰 Revenue Architecture Shift</h2>
- <p>The move from subscription dependency to a diversified,
- take-rate-anchored revenue model.</p>
- <div class="chart-container">
- <!-- <div class="flourish-embed flourish-chart" data-src="visualisation/28114221"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/28114221/thumbnail" width="100%" alt="visualization" /></noscript></div> -->
- </div>
+    <div class="hero-label">
+      🇳🇬 GTM School | African Fintech Edition
+    </div>
 
- <!-- DAY 3: v0 components and AI agent will be inserted here -->
+    <h1>
+      From Cooperative Software<br/>
+      to <span>Financial Operating System</span>
+    </h1>
+
+    <p class="hero-subtitle">
+      How Coopify.africa is sitting on Nigeria's most
+      undermonetized embedded finance opportunity — and the GTM playbook
+      to unlock it.
+    </p>
+
+    <div class="hero-meta">
+      <!-- EDIT: Put your name and the date here -->
+      By [Wole Ogunlade] &nbsp;·&nbsp; March 2026 &nbsp;·&nbsp;
+      Product, GTM and Growth Advisor to early-stage AI-native and SaaS (seed to SeriesA)
+    </div>
+
+  </div>
+  <!-- END SECTION 1 -->
+
+
+  <!-- ============================================================
+       SECTION 2: KEY STATS BAR
+       Three big numbers that grab attention immediately
+       EDIT: You can change these numbers and labels
+  ============================================================ -->
+  <div class="container">
+
+    <div class="stats-grid">
+
+      <div class="stat-box">
+        <div class="stat-number">₦163.9M</div>
+        <div class="stat-label">
+          Coopify 3-Year Cumulative ARR<br/>
+          (Embedded Finance Model)
+        </div>
+      </div>
+
+      <div class="stat-box">
+        <div class="stat-number">120.6%</div>
+        <div class="stat-label">
+          ProbityCoop ARR Uplift<br/>
+          by Year 3 vs SaaS-Only
+        </div>
+      </div>
+
+      <div class="stat-box">
+        <div class="stat-number">22,000+</div>
+        <div class="stat-label">
+          Registered Cooperative Societies<br/>
+          in Nigeria — Largely Undigitized
+        </div>
+      </div>
+
+    </div>
+    <!-- END STATS GRID -->
+
+
+    <!-- ============================================================
+         SECTION 3: INTRODUCTION TEXT
+         This is where your article begins
+         EDIT: Replace the placeholder text below with your own writing
+         or paste from your research notes
+    ============================================================ -->
+    <hr class="divider" />
+
+    <div class="section-label">The Opportunity</div>
+
+    <h2>Why African Cooperatives Are the Most Undermonetized
+        Fintech Vertical on Earth</h2>
+
+    <p>
+      <!-- EDIT: Replace this with your own introduction paragraph -->
+      Africa has over 63 million registered cooperative members.
+      Nigeria alone has more than 22,000 registered cooperative societies
+      managing billions of naira in monthly contributions. Yet almost all
+      of this financial activity flows through manual ledgers, Excel sheets,
+      and informal cash handling — completely invisible to banks and
+      completely unmonetized by software vendors.
+    </p>
+
+    <p>
+      <!-- EDIT: Add your second paragraph here -->
+      Coopify is a  Nigerian SaaS platform that
+      has digitized this workflow. It has barely scratched the
+      surface of what is possible. This explores the opportunities that can be unlocked by layering embedded payments, lending,
+      and insurance on top of the existing software, to
+      transform from workflow tools into full financial operating systems —
+      unlocking 40 to 120 percent ARR uplifts within 12 months.
+    </p>
+
+    <div class="callout">
+      💡 <strong>Key Insight:</strong> The company that builds the
+      Cooperative Financial Operating System for Africa — owning
+      contribution data, loan flow, payment infrastructure, and credit
+      intelligence simultaneously — is not building a SaaS business.
+      It is building Africa's alternative banking system from the bottom up.
+    </div>
+    <!-- END SECTION 3 -->
+
+
+    <!-- ============================================================
+         SECTION 4: FLOURISH CHART 1 — ARR TRAJECTORY
+         EDIT: Replace the src URL with your actual Flourish embed link
+         How to get your Flourish URL:
+         1. Go to flourish.studio
+         2. Open your ARR Trajectory chart
+         3. Click "Export & Publish"
+         4. Click "Publish to Flourish"
+         5. Copy the embed URL shown
+         6. Paste it below replacing the placeholder URL
+    ============================================================ -->
+    <hr class="divider" />
+
+    <div class="section-label">Chart 1 of 2</div>
+    <h2>ARR Trajectory: SaaS-Only vs. Embedded Finance</h2>
+    <p>
+      The divergence begins immediately in Year 1 and compounds
+      dramatically by Year 3 — driven by payments attach rate
+      growth and lending revenue layering on top of the SaaS base.
+    </p>
+
+    <div class="embed-block">
+
+      <!-- 
+        EDIT THIS LINE:
+        Replace the src below with your real Flourish chart URL
+        It will look something like:
+        https://flo.uri.sh/visualisation/12345678/embed
+      -->
+      <iframe
+        src="https://public.flourish.studio/visualisation/28096756/ "
+        height="500"
+        title="ARR Trajectory Chart">
+      </iframe>
+
+      <p class="embed-label">
+        Fig 1. ARR Trajectory — Coopify & ProbityCoop |
+        Pure SaaS vs. Embedded Finance | Year 1–3 |
+        Source: GTM School ARR Projection Model
+      </p>
+
+    </div>
+    <!-- END SECTION 4 -->
+
+
+    <!-- ============================================================
+         SECTION 5: FLOURISH CHART 2 — REVENUE MIX
+         EDIT: Same as above — replace with your second Flourish URL
+    ============================================================ -->
+    <div class="section-label">Chart 2 of 2</div>
+    <h2>Revenue Mix Breakdown by Year</h2>
+    <p>
+      Fintech revenue grows from 21% of total ARR in Year 1 to
+      over 54% by Year 3 for ProbityCoop — a complete business
+      model transformation without changing the customer base.
+    </p>
+
+    <div class="embed-block">
+
+      <!-- 
+        EDIT THIS LINE:
+        Replace with your second Flourish chart URL
+      -->
+      <iframe
+        src="https://public.flourish.studio/visualisation/28114221/"
+        height="500"
+        title="Revenue Mix Chart">
+      </iframe>
+
+      <p class="embed-label">
+        Fig 2. Revenue Mix — SaaS vs. Payments vs. Lending |
+        Coopify & ProbityCoop | Year 1–3 |
+        Source: GTM School ARR Projection Model
+      </p>
+
+    </div>
+
+    <hr class="divider" />
+    <!-- END SECTION 5 -->
+
+
+    <!-- ============================================================
+         SECTION 6: V0 ROI CALCULATOR
+         EDIT: Replace the src URL with your Vercel deploy URL
+         How to get your Vercel URL:
+         1. Go to vercel.com/dashboard
+         2. Find your ROI calculator project
+         3. Click on it
+         4. Copy the URL shown (ends in .vercel.app)
+         5. Paste it below
+    ============================================================ -->
+    <div class="section-label">Interactive Tool 1 of 2</div>
+    <h2>Calculate Your Cooperative Platform Revenue</h2>
+    <p>
+      Adjust the sliders below to model your own cooperative portfolio.
+      Enter your number of cooperative clients, average member
+      contributions, and attach rates to see your embedded finance
+      revenue potential in real time.
+    </p>
+
+    <div class="embed-block">
+
+      <!-- 
+        EDIT THIS LINE:
+        Replace with your Vercel ROI Calculator URL
+        Example: https://v0-roi-calculator-blush-sigma.vercel.app/ 
+      -->
+      <iframe
+        src="https://v0-roi-calculator-blush-sigma.vercel.app/ "
+        height="700"
+        title="Cooperative Embedded Finance ROI Calculator">
+      </iframe>
+
+      <p class="embed-label">
+        Interactive ROI Calculator — Built with Vercel v0 |
+        Coopify.Africa & ProbityCoop Edition |
+        Adjust inputs to model your cooperative portfolio
+      </p>
+
+    </div>
+
+    <hr class="divider" />
+    <!-- END SECTION 6 -->
+
+
+    <!-- ============================================================
+         SECTION 7: V0 PRICING TOGGLE
+         EDIT: Replace the src URL with your pricing toggle Vercel URL
+    ============================================================ -->
+    <div class="section-label">Interactive Tool 2 of 2</div>
+    <h2>Platform Pricing: SaaS Model vs. Financial OS Model</h2>
+    <p>
+      Toggle between the two pricing architectures below to see
+      how the business model shifts from flat subscription to
+      take-rate economics — and why the Financial OS model
+      unlocks a dramatically higher revenue ceiling.
+    </p>
+
+    <div class="embed-block">
+
+      <!-- 
+        EDIT THIS LINE:
+        Replace with your Vercel Pricing Toggle URL
+        Example: https://coopify-pricing-toggle.vercel.app
+      -->
+      <iframe
+        src="https://v0-pricing-comparison-component-kappa.vercel.app/ "
+        height="750"
+        title="Cooperative Platform Pricing Toggle">
+      </iframe>
+
+      <p class="embed-label">
+        Pricing Architecture Toggle — SaaS Model vs. Financial OS Model |
+        Built with Vercel v0 | Coopify.Africa & ProbityCoop Edition
+      </p>
+
+    </div>
+
+    <hr class="divider" />
+    <!-- END SECTION 7 -->
+
+
+    <!-- ============================================================
+         SECTION 8: AI LEAD CAPTURE PLACEHOLDER
+         This is where Day 3 content will go — leave it as is
+    ============================================================ -->
+    <div class="section-label">Coming — Day 3</div>
+    <h2>AI Lead Capture Agent</h2>
+
+    <div class="callout">
+      🔧 <strong>This section is reserved for Day 3.</strong><br/><br/>
+      Your AI-powered lead capture agent will be embedded here.
+      Visitors will be able to enter their cooperative portfolio details
+      and receive a personalized embedded finance revenue estimate
+      delivered to their email — automatically.
+    </div>
+
+    <hr class="divider" />
+    <!-- END SECTION 8 -->
+
+
+    <!-- ============================================================
+         SECTION 9: ARTICLE BODY TEXT
+         EDIT: Paste your full article/research text here
+         Replace each placeholder paragraph with your own content
+         You can copy from your GTM School notes or research document
+    ============================================================ -->
+    <div class="section-label">The Full Analysis</div>
+
+    <h2>The GTM Playbook: From Cooperative SaaS to Financial OS</h2>
+
+    <!-- EDIT: Paste your article sections below -->
+    <!-- TIP: Each paragraph goes between <p> and </p> tags -->
+
+    <h3>1. ICP Redefinition</h3>
+    <p>
+      <!-- PASTE YOUR ICP SECTION TEXT HERE -->
+      [Paste your ICP redefinition text from the GTM Strategy module here]
+    </p>
+
+    <h3>2. Pricing Architecture Shift</h3>
+    <p>
+      <!-- PASTE YOUR PRICING SECTION TEXT HERE -->
+      [Paste your pricing architecture content here]
+    </p>
+
+    <h3>3. The Revenue Model Comparison</h3>
+    <p>
+      <!-- PASTE YOUR REVENUE MODEL TEXT HERE -->
+      [Paste your SaaS vs Embedded Finance comparison content here]
+    </p>
+
+    <h3>4. 90-Day Implementation Plan</h3>
+    <p>
+      <!-- PASTE YOUR 90-DAY PLAN HERE -->
+      [Paste your 90-day execution playbook here]
+    </p>
+
+    <hr class="divider" />
+    <!-- END SECTION 9 -->
+
+
+    <!-- ============================================================
+         SECTION 10: FOOTER
+         EDIT: Add your name, LinkedIn, and contact info
+    ============================================================ -->
+    <div class="footer">
+
+      <p>
+        <!-- EDIT: Replace with your own name and links -->
+        Written by <strong>[YOUR NAME]</strong><br/>
+        GTM School | African Fintech Edition | March 2026
+      </p>
+
+      <p>
+        <!-- EDIT: Replace # with your actual LinkedIn URL -->
+        <a href="#">LinkedIn</a>
+        &nbsp;·&nbsp;
+        <!-- EDIT: Replace # with your Twitter/X URL -->
+        <a href="#">Twitter / X</a>
+        &nbsp;·&nbsp;
+        <!-- EDIT: Replace with your email -->
+        <a href="mailto:your@email.com">Email</a>
+      </p>
+
+      <p style="margin-top: 20px; font-size: 11px; color: #334155;">
+        All financial projections are directional models for strategic
+        planning. Adjust assumptions to verified cooperative unit
+        economics before board presentation. Exchange rate: ₦1,600 per $1 USD.
+      </p>
+
+    </div>
+    <!-- END SECTION 10 -->
+
+
+  </div>
+  <!-- END MAIN CONTAINER -->
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
