@@ -1,18 +1,47 @@
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
  <meta charset="UTF-8">
- <title>Embedded Finance GTM Hub</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Embedded Finance GTM Hub | Interactive Case Study</title>
  <style>
- body { font-family: sans-serif; max-width: 900px; margin: 60px auto;
- background: #0a0a0a; color: #e5e5e5; padding: 20px; }
- h1 { color: #00d4aa; }
- p { color: #999; }
+ body { font-family: 'Segoe UI', sans-serif; max-width: 960px;
+ margin: 0 auto; background: #0a0a0a; color: #e5e5e5; padding: 40px 20px; }
+ h1 { color: #00d4aa; font-size: 2.2em; }
+ h2 { color: #7dd3fc; margin-top: 40px; }
+ p { color: #94a3b8; line-height: 1.7; }
+ .chart-container { margin: 40px 0; border-radius: 12px; overflow: hidden; }
+ .section-label { font-size: 0.85em; color: #00d4aa;
+ text-transform: uppercase; letter-spacing: 2px; }
  </style>
 </head>
 <body>
- <h1>🚀 Embedded Finance GTM Hub</h1>
- <p>Interactive Growth Case Study — Coming Day 3</p>
- <p>Built with: Flourish · Vercel v0 · Gemini AI · NotebookLM</p>
+ <p class="section-label">Interactive Growth Case Study</p>
+ <h1>SaaS to Financial Operating System: The GTM Playbook</h1>
+ <p>How B2B SaaS platforms are engineering 3–5x revenue growth
+ by embedding financial services into their core product.</p>
+
+ <h2>📊 ARR Trajectory: What Embedded Finance Actually Does to Revenue</h2>
+ <p>Three-year projection model for a $2M ARR baseline SaaS platform
+ transitioning to an embedded finance architecture.</p>
+ <div class="chart-container">
+ <!-- <div class="flourish-embed flourish-chart" data-src="visualisation/28096756"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/28096756/thumbnail" width="100%" alt="visualization" /></noscript></div> -->
+ </div>
+
+ <h2>💰 Revenue Architecture Shift</h2>
+ <p>The move from subscription dependency to a diversified,
+ take-rate-anchored revenue model.</p>
+ <div class="chart-container">
+ <!-- <div class="flourish-embed flourish-chart" data-src="visualisation/28114221"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/28114221/thumbnail" width="100%" alt="visualization" /></noscript></div> -->
+ </div>
+
+ <!-- DAY 3: v0 components and AI agent will be inserted here -->
+
 </body>
 </html>
